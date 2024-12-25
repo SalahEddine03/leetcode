@@ -1,26 +1,19 @@
-
-import java.util.*;
-
+import java.util.Arrays;
 public class valid_anagrams {
-    public static boolean duplicate(int[] nums) {
 
-        for (int i = 0; i < nums.length-1; i++) {
-            for (int j = i+1 ; j <nums.length;j++) {
-                if (nums[i]==nums[j]) {
-                    return true;
-                }
-            }
+    public static boolean valid(String s, String t) {
+        char[] s_array = s.toCharArray();
+        char[] t_array = t.toCharArray();
 
-        }
-        return false;
-    }
-    public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 3};
-        System.out.println(duplicate(nums)); // Expected output: true
+        Arrays.sort(s_array);
+        Arrays.sort(t_array);
+
+        return Arrays.equals(s_array, t_array);
     }
 
+    public static void main(String[] args) { // Corrected "Main" to "main"
+        String sa = "abcd";
+        String ta = "abcd";
+        System.out.println(valid(sa, ta));
+    }
 }
-
-
-
-
